@@ -43,6 +43,12 @@ button {
 .social-button:active {
     background: rgba(255, 255, 255, .4);
 }
+@media (max-width: 768px){
+    .social-button {
+        height: 48px;
+        width: 48px;
+    }
+}
 
 
 /*header*/
@@ -102,6 +108,9 @@ footer ul{
     padding: 0;
     list-style-type: none;
 }
+footer ul > li{
+    padding-bottom: 14px;
+}
 footer a{
     color: #FFFFFF;
 }
@@ -123,4 +132,25 @@ footer .logo-wrapper{
 }
 .footer-social .social-button:last-child{
     margin-right: none;
+}
+@media (max-width: 768px){
+    footer{
+        padding-bottom: 32px;
+    }
+    footer .logo-wrapper{
+        padding: 68px 15px 54px;
+    }
+    .footer-social{
+        display: flex;
+        justify-content: space-around;
+    }
+    .footer-social .social-button{
+        margin-right: 0;
+    }
+    .footer-links{
+        margin-bottom: 54px;
+    }
+    footer h3, footer ul > li, .footer-copyright{
+        text-align: center;
+    }
 }
