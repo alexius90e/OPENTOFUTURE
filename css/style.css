@@ -143,6 +143,9 @@ header {
     .main-content p{
         font-size: 0.875rem;
     }
+    .first-screen{
+        margin-bottom: 115px;
+    }
     .first-screen-img{
         text-align: center;
     }
