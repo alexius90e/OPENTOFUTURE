@@ -68,6 +68,7 @@ function createCard(obj){
 }    
 function addDate(obj){
     let currDate = new Date(obj.time * 1000);
+
     let month = ['January','February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     month = month[currDate.getMonth()];
     let day = `${currDate.getDate() / 10 >= 1 ? currDate.getDate() : '0' + currDate.getDate()} ${month} ${currDate.getFullYear()}`;
@@ -90,3 +91,4 @@ function addDownloadItem(obj, downloadsCard){
         downloadsCardFooter.appendChild(showMoreButton);
     }
 }
+
