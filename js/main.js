@@ -19,7 +19,7 @@ function createCard(obj){
     let linkStart = 'https://mydatacapsule.com/download/otf/';
     counter = 0;
     for (variable in obj.files){
-        let a = `<div>${counter + 1}. <a href="${linkStart + variable}">${obj.files[variable][0]}</a> ${obj.files[variable][1]} Mb</div>`;
+        let a = `<div>${counter + 1}. <a href="${linkStart + variable}">${obj.files[variable][0]}</a> ${(obj.files[variable][1]/1024**2).toFixed(2)} Mb</div>`;
         links += a;
         counter++
         console.log(variable);
@@ -39,7 +39,7 @@ function createCard(obj){
         `
 }    
 function addDate(obj){
-    let currDate = new Date(Date.now() - new Date(obj.time));
+    let currDate = new Date(obj.time*1000);
     let month = ['January','February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     month = month[currDate.getMonth()];
     let day = `${currDate.getDate() / 10 >= 1 ? currDate.getDate() : '0' + currDate.getDate()} ${month} ${currDate.getFullYear()}`;
