@@ -76,6 +76,7 @@ button {
     }
 }
 
+
 /*header*/
 
 header {
@@ -115,6 +116,7 @@ header {
     height: 24px;
 }
 
+
 /*main*/
 
 .main-content {
@@ -153,7 +155,9 @@ header {
         width: 60%;
     }
 }
-
+.downloads{
+    margin-bottom: 50px;
+}
 main .downloads-card{
     padding: 25px 36px;
     margin-bottom: 18px;
@@ -208,6 +212,15 @@ main .downloads-card{
     display: flex;
     align-items: center;
 }
+.downloads-body__hidden{
+    overflow: hidden;
+    height: 100%;
+    max-height: 999px;
+    transition: all linear 0.5s;
+}
+.downloads-body__hidden.hide{
+    max-height: 0px;
+}
 .item__copy-button{
     padding: 0;
     margin-right: 27px;
@@ -236,14 +249,33 @@ main .downloads-card{
     font-weight: 500;
     letter-spacing: 0.15px;
 }
-.more-files__button:focus,
 .more-files__button:hover {
     color: #bb0028;
 }
 .more-files__button:active {
     color: #e34c6e;
 }
-
+.load-button__wrap{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 135px;
+}
+.load-button{
+    padding: 11px 34px;
+    background: none;
+    border: 1px solid #e41139;
+    border-radius: 4px;
+    color: #e41139;
+    font-weight: 500;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+}
+.load-button:hover{
+    background: #242B39;
+}
+.load-button:active{
+    background: #141C2B;
+}
 
 /*footer*/
 

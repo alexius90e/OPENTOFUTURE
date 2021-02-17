@@ -1,6 +1,26 @@
 const downloadsContainer = document.querySelector('main .downloads');
+const loadMoreButton = document.querySelector('.load-button');
+const take = 5;
+const skip = skipCounter();
 
-let response =  fetch("https://mydatacapsule.com/api/otf_getitems?skip=0&take=8")
+makeResponse();
+loadMoreButton.addEventListener('click', () => {
+    makeResponse();
+    activateMoreButton();
+})
+
+
+
+function skipCounter() {
+    let count = 0;
+    return function() {
+      return count ++;
+    };
+}
+
+function makeResponse(){
+    let url = `https://mydatacapsule.com/api/otf_getitems?skip=${skip() * take}&take=${take}`;
+    let response =  fetch(url)
     .then(res => res.json())
     .then(data => {
         for (obj of data){
@@ -13,19 +33,10 @@ let response =  fetch("https://mydatacapsule.com/api/otf_getitems?skip=0&take=8"
         return data;
     })
     .then(data => {
-        document.querySelectorAll('.more-files__button').forEach(item => {
-            item.addEventListener('click', function() {
-                let hiddenItems = this.parentNode.parentNode.querySelector('.downloads-body__hidden');
-                if (hiddenItems.classList.contains('d-none')){
-                    hiddenItems.classList.remove('d-none');
-                } else {
-                    hiddenItems.classList.add('d-none');
-                }
-            });
-        });
+        activateMoreButton();
         return data;
     });
-
+}
 
 function createCard(obj){
     let visibleLinks = '';
@@ -61,11 +72,27 @@ function createCard(obj){
         <div class="downloads-body__visible">
             ${visibleLinks}
         </div>
-        <div class="downloads-body__hidden d-none">
+        <div class="downloads-body__hidden hide">
             ${hiddenLinks}
         </div>
     `;
 }    
+
+function activateMoreButton() {
+    document.querySelectorAll('.more-files__button').forEach(item => {
+        item.addEventListener('click', function() {
+            let hiddenItems = this.parentNode.parentNode.querySelector('.downloads-body__hidden');
+            if (hiddenItems.classList.contains('hide')){
+                // hiddenItems.classList.remove('d-none');
+                hiddenItems.classList.remove('hide');
+            } else {
+                hiddenItems.classList.add('hide')
+                // hiddenItems.classList.add('d-none');
+            }
+        });
+    });
+}
+
 function addDate(obj){
     let currDate = new Date(obj.time * 1000);
     let month = ['January','February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
@@ -76,9 +103,11 @@ function addDate(obj){
     let time = `${hours}:${minutes}`
     return `${day} at ${time}`;
 }
+
 function addFilesQty(obj){
     return Object.keys(obj.files).length;
 }
+
 function addDownloadItem(obj, downloadsCard){
     if (Object.keys(obj.files).length > 4) {
         let showMoreButton = document.createElement('button');
