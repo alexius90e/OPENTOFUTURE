@@ -17,27 +17,35 @@ const dict = {
         href : '../../',
     },
     es : {
+        month : ['January','February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
         href : '../../',
     },
     de : {
+        month : ['January','February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
         href : '../../',
     },
     fr : {
+        month : ['January','February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
         href : '../../',
     },
     pt : {
+        month : ['January','February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
         href : '../../',
     },
     hi : {
+        month : ['January','February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
         href : '../../',
     },
     ko : {
+        month : ['January','February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
         href : '../../',
     },
     ja : {
+        month : ['January','February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
         href : '../../',
     },
     zh : {
+        month : ['January','February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
         href : '../../',
     },
 }
