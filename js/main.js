@@ -78,10 +78,10 @@ function createCard(obj){
                 <div class="item__title">${counter + 1}.    ${obj.files[variable][0]}</div>
                 <div class="item__size">${(obj.files[variable][1] / 1024**2 + 0.05).toFixed(1)} Mb</div>
                 <button class="item__copy-button">
-                    <img src="/images/copy-link-icon.svg" alt="copy-link-icon">
+                    <img src="../../images/copy-link-icon.svg" alt="copy-link-icon">
                 </button>
                 <a class="item__download-button" href="${linkStart + variable}">
-                    <img src="/images/fluent_arrow-icon.svg" alt="copy-link-icon">
+                    <img src="../../images/fluent_arrow-icon.svg" alt="copy-link-icon">
                 </a>
             </div>
         `;
