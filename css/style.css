@@ -106,6 +106,7 @@ header {
     justify-content: flex-end;
     align-items: center;
     cursor: pointer;
+    position: relative;
 }
 .lang-tittle {
     margin-right: 8px;
@@ -115,6 +116,50 @@ header {
     width: 24px;
     height: 24px;
 }
+.lang-dropdown{
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    overflow: hidden;
+    max-height: 0px;
+    z-index: 5;
+    top: 60px;
+    list-style-type: none;
+    text-transform: uppercase;
+    background: #ffffff;
+    border-radius: 4px;
+}
+.lang-dropdown.dropdown{
+    max-height: 999px;
+}
+.lang-dropdown li{
+    padding: 8px;
+}
+.lang-dropdown li img{
+    height: 24px;
+    width: 24px;
+    margin-right: 4px;
+}
+.lang-dropdown a{
+    color: #141C2B;
+    font-weight: 300;
+}
+.lang-dropdown li:hover, 
+.lang-dropdown li:focus{
+    background-color: #141C2B;
+}
+.lang-dropdown li:hover a, 
+.lang-dropdown li:focus a{
+    color: #ffffff;
+    text-decoration: none;
+}
+.lang-dropdown li:first-child{
+    border-radius: 4px 4px 0 0;
+}
+.lang-dropdown li:last-child{
+    border-radius: 0 0 4px 4px;
+}
+
 
 
 /*main*/
